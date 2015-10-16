@@ -18,19 +18,18 @@
   If you look as the permissions required by similar extensions in the Web Store, you will see that they are exactly the same
   so before you make assumptions based on two short and broad statements, please read the following:
 
-__ "tabs" __
+**"tabs"**
   * This permissions results in the "This extensions can access your browsing history" warning.
   * I *NEVER* access your browsing history.
   * I need this permission to open tabs. I use this to open the options page on major updates.
   * This permission is also used to refresh the Google Calendar tab when you save your settings.
-
-__ "http://\*google.com/calendar/\*", "https://\*google.com/calendar/\*" __
-  * This permission results in the "This extension can access your data on calendar.google.com/calendar" warning.
+**"http://\*google.com/calendar/\*", "https://\*google.com/calendar/\*"**
+  * This permission results in the "This extension can access your data on ..." warning.
   * I *NEVER* access, read, store, or transmit your personal data.
   * I need this permission to run user scripts behind specific pages in the browser.
   * These scripts inject Javascript and CSS into Gmail to enhance functionality and hide elements
 
-  Still don't trust me? Go to [https://github.com/ldash/Minimalist-Google-Calendar] to see the entire source code.
+  Still don't trust me? See the entire source code for yourself.
 
 
 ## OPTIONS
@@ -40,15 +39,16 @@ __ "http://\*google.com/calendar/\*", "https://\*google.com/calendar/\*" __
   * Organized tabbed navigation
 
 
+
   The following elements can be modified individually:
-## GENERAL
+### GENERAL
   * Hide Minimalist for Google Calendar options icon
   * Show date in favicon
   * Show transition animations
   * Rounded corners on input fields and textareas
   * Custom CSS input
 
-## THEME
+### THEME
   * Customize background color
   * Customize border color
   * Customize link color
@@ -56,7 +56,7 @@ __ "http://\*google.com/calendar/\*", "https://\*google.com/calendar/\*" __
   * Customize today highlight color
   * Customize button colors
 
-## GOOGLE BAR
+### GOOGLE BAR
   * Hide Google bar [click to toggle when hidden]
   * Make Google bar invisible until hover
   * Hide background & border
@@ -68,7 +68,7 @@ __ "http://\*google.com/calendar/\*", "https://\*google.com/calendar/\*" __
   * Hide Help link
   * Hide Sign out link
 
-## HEADER
+### HEADER
   * Hide header [click to toggle when hidden]
   * Hide logo
   * Use custom logo
@@ -76,7 +76,7 @@ __ "http://\*google.com/calendar/\*", "https://\*google.com/calendar/\*" __
   * Hide search button
   * Hide search options
 
-## MAIN
+### MAIN
   * Hide top toolbar
   * Hide "Today" button
   * Hide navigation arrows
@@ -85,7 +85,7 @@ __ "http://\*google.com/calendar/\*", "https://\*google.com/calendar/\*" __
   * Hide Refresh link
   * Hide view buttons
 
-## NAVIGATION
+### NAVIGATION
   * Hide navigation
   * Custom nav width
   * Hide Create event button
@@ -97,22 +97,19 @@ __ "http://\*google.com/calendar/\*", "https://\*google.com/calendar/\*" __
   * Hide "Add | Settings" links
 
 ## MORE?
-  * Leave feature suggestions in the [Issue Tracker](https://github.com/ldash/Minimalist-Google-Calendar/issues)
+ Leave feature suggestions in the [Issue Tracker](https://github.com/ldash/Minimalist-Google-Calendar/issues)
 
 
 ## ISSUES TRACKING
-
   I test as thoroughly as I can before each release, but bugs are bound to get through.
   Read, track, and submit bugs in the [Issue Tracker](https://github.com/ldash/Minimalist-Google-Calendar/issues)
 
 
 ## QUESTION?
-
  Email me: ldashevskiy@gmail.com
 
 
 ## COMING SOON
-
   Want to recommend a feature? Submit it in the [Issue Tracker](https://github.com/ldash/Minimalist-Google-Calendar/issues)
 
 

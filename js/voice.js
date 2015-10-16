@@ -9,7 +9,7 @@
 // @include          https://*.google.com/voice/*
 // ==/UserScript==
 
-chrome.extension.sendRequest({elements: 'e'}, function(response) {
+chrome.runtime.sendMessage({elements: 'e'}, function(response) {
 	if(response.e) {
 	  try
 	  {

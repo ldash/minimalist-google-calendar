@@ -3,190 +3,13 @@
 	<title>Minimalist for Google Calendar Options</title>
 	<link type="text/css" rel="stylesheet" href="css/options.css" />
 	<link type="text/css" rel="stylesheet" href="css/picker/colorpicker.css" />
-	<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
 	<script type="text/javascript" src="js/options.js"></script>
+	<script type="text/javascript" src="js/init_events.js"></script>
 	<script type="text/javascript" src="js/picker/colorpicker.js"></script>
 	<script type="text/javascript" src="js/picker/eye.js"></script>
 	<script type="text/javascript" src="js/picker/utils.js"></script>
-	<script type="text/javascript">
-		//---- COLOR PICKERS ----//
-		(function($){
-			var initLayout = function() {
-				$('#backCLR').ColorPicker({
-					color: localStorage["backCLR"],
-					onShow: function (colpkr) {
-						$(colpkr).fadeIn(500);
-						return false;
-					},
-					onHide: function (colpkr) {
-						$(colpkr).fadeOut(500);
-						return false;
-					},
-					onChange: function (hsb, hex, rgb) {
-						$('#backCLR div').css('backgroundColor', '#' + hex);
-						localStorage["backCLR"] = "#" + hex;
-					}
-				});
-				$('#borderCLR').ColorPicker({
-					color: localStorage["borderCLR"],
-					onShow: function (colpkr) {
-						$(colpkr).fadeIn(500);
-						return false;
-					},
-					onHide: function (colpkr) {
-						$(colpkr).fadeOut(500);
-						return false;
-					},
-					onChange: function (hsb, hex, rgb) {
-						$('#borderCLR div').css('backgroundColor', '#' + hex);
-						localStorage["borderCLR"] = "#" + hex;
-					}
-				});
-				$('#linkCLR').ColorPicker({
-					color: localStorage["linkCLR"],
-					onShow: function (colpkr) {
-						$(colpkr).fadeIn(500);
-						return false;
-					},
-					onHide: function (colpkr) {
-						$(colpkr).fadeOut(500);
-						return false;
-					},
-					onChange: function (hsb, hex, rgb) {
-						$('#linkCLR div').css('backgroundColor', '#' + hex);
-						localStorage["linkCLR"] = "#" + hex;
-					}
-				});
-				$('#Hcolor').ColorPicker({
-					color: localStorage["Hcolor"],
-					onShow: function (colpkr) {
-						$(colpkr).fadeIn(500);
-						return false;
-					},
-					onHide: function (colpkr) {
-						$(colpkr).fadeOut(500);
-						return false;
-					},
-					onChange: function (hsb, hex, rgb) {
-						$('#Hcolor div').css('backgroundColor', '#' + hex);
-						localStorage["Hcolor"] = "#" + hex;
-					}
-				});
-				$('#todayCLR').ColorPicker({
-					color: localStorage["todayCLR"],
-					onShow: function (colpkr) {
-						$(colpkr).fadeIn(500);
-						return false;
-					},
-					onHide: function (colpkr) {
-						$(colpkr).fadeOut(500);
-						return false;
-					},
-					onChange: function (hsb, hex, rgb) {
-						$('#todayCLR div').css('backgroundColor', '#' + hex);
-						localStorage["todayCLR"] = "#" + hex;
-					}
-				});
-				$('#BTNcolor').ColorPicker({
-					color: localStorage["BTNcolor"],
-					onShow: function (colpkr) {
-						$(colpkr).fadeIn(500);
-						return false;
-					},
-					onHide: function (colpkr) {
-						$(colpkr).fadeOut(500);
-						return false;
-					},
-					onChange: function (hsb, hex, rgb) {
-						$('#BTNcolor div').css('backgroundColor', '#' + hex);
-						$('#testButton').css('color', '#' + hex);
-						localStorage["BTNcolor"] = "#" + hex;
-					}
-				});
-				$('#BTNborder').ColorPicker({
-					color: localStorage["BTNborder"],
-					onShow: function (colpkr) {
-						$(colpkr).fadeIn(500);
-						return false;
-					},
-					onHide: function (colpkr) {
-						$(colpkr).fadeOut(500);
-						return false;
-					},
-					onChange: function (hsb, hex, rgb) {
-						$('#BTNborder div').css('backgroundColor', '#' + hex);
-						$('#testButton').css('border-color', '#' + hex);
-						localStorage["BTNborder"] = "#" + hex;
-					}
-				});
-				$('#BTNbottom').ColorPicker({
-					color: localStorage["BTNbottom"],
-					onShow: function (colpkr) {
-						$(colpkr).fadeIn(500);
-						return false;
-					},
-					onHide: function (colpkr) {
-						$(colpkr).fadeOut(500);
-						return false;
-					},
-					onChange: function (hsb, hex, rgb) {
-						$('#BTNbottom div').css('backgroundColor', '#' + hex);
-						$('#testButton').css('background', '-webkit-gradient(linear,0% 40%,0% 70%,from(#' + hex + '),to(' + top + '))');
-						bottom = "#" + hex;
-						localStorage["BTNbottom"] = "#" + hex;
-					}
-				});
-				$('#BTNtop').ColorPicker({
-					color: localStorage["BTNtop"],
-					onShow: function (colpkr) {
-						$(colpkr).fadeIn(500);
-						return false;
-					},
-					onHide: function (colpkr) {
-						$(colpkr).fadeOut(500);
-						return false;
-					},
-					onChange: function (hsb, hex, rgb) {
-						$('#BTNtop div').css('backgroundColor', '#' + hex);
-						$('#testButton').css('background', '-webkit-gradient(linear,0% 40%,0% 70%,from(' + bottom + '),to(#' + hex + '))');
-						top = "#" + hex;
-						localStorage["BTNtop"] = "#" + hex;
-					}
-				});
-			};
-			EYE.register(initLayout, 'init');
-		})(jQuery)
-		//---- END COLOR PICKERS ----//
-	</script>
-	<script type="text/javascript">
-
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-21124660-1']);
-	  _gaq.push(['_trackPageview']);
-
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-
-	</script>
-	<script type="text/javascript">
-		//---- GOOGLE WEB FONT LOADER ----//
-		WebFontConfig = {
-			google: { families: [ 'Raleway:100' ] }
-		};
-		(function() {
-			var wf = document.createElement('script');
-				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-					'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-				wf.type = 'text/javascript';
-				wf.async = 'true';
-			var s = document.getElementsByTagName('script')[0];
-				s.parentNode.insertBefore(wf, s);
-		})();
-		//---- END GOOGLE WEB FONT LOADER ----//
-	</script>
+	<script type="text/javascript" src="js/picker/extra.js"></script>
 </head>
 <body>
 <div id="OPTwrap">
@@ -197,11 +20,11 @@
 			<strong>Subtract until it breaks</strong><br />The way of the minimalist
 		</div>
 		<div id="refresh">
-			<strong>Settings saved!</strong><br /><a href="#" onclick="javascript:chrome.extension.sendRequest({action: 'reload'},function(){});">Refresh Google Calendar to apply</a>
+			<strong>Settings saved!</strong><br /><a id="esh" href="#">Refresh Google Calendar to apply</a>
 			<br /><br /><span style="opacity:.5;">Some changes require browser restart</span>
 		</div>
 		<div id="refreshEI">
-			<strong>Import successful!</strong><br /><a href="#" onclick="javascript:chrome.extension.sendRequest({action: 'reload'},function(){});">Refresh Google Calendar to apply</a>
+			<strong>Import successful!</strong><br /><a id="eshEI" href="#">Refresh Google Calendar to apply</a>
 		</div>
 		<div id="easterEgg_on">
 			<strong>Easter Egg enabled!</strong><br />Refresh Google Voice to apply
@@ -212,19 +35,19 @@
 		<!-- END SYSTEM MESSAGES -->
 		<!-- NAVIGATION -->
 		<ul>
-			<li><a href="#gen" class="" id="gen" onclick="navigate('gen')">General</a></li>
-			<li><a href="#the" class="" id="the" onclick="navigate('the')">Theme</a></li>
-			<li><a href="#goo" class="" id="goo" onclick="navigate('goo')">Google Bar</a></li>
-			<li><a href="#hea" class="" id="hea" onclick="navigate('hea')">Header</a></li>
-			<li><a href="#mai" class="" id="mai" onclick="navigate('mai')">Main</a></li>
-			<li><a href="#gat" class="" id="gat" onclick="navigate('gat')">Navigation</a></li>
+			<li><a href="#gen" class="" id="gen">General</a></li>
+			<li><a href="#the" class="" id="the">Theme</a></li>
+			<li><a href="#goo" class="" id="goo">Google Bar</a></li>
+			<li><a href="#hea" class="" id="hea">Header</a></li>
+			<li><a href="#mai" class="" id="mai">Main</a></li>
+			<li><a href="#gat" class="" id="gat">Navigation</a></li>
 			<li>&nbsp;</li>
 			<li>&nbsp;</li>
-			<li><a href="#imp" class="" id="imp" onclick="navigate('imp')">Import/Export</a></li>
-			<li><a href="#mor" class="" id="mor" onclick="navigate('mor')">More</a></li>
-			<li><a href="#nge" class="" id="nge" onclick="navigate('nge')">Changes</a></li>
-			<li><a href="#sup" class="" id="sup" onclick="navigate('sup')">Support</a></li>
-			<li><a href="#abo" class="" id="abo" onclick="navigate('abo')">About</a></li>
+			<li><a href="#imp" class="" id="imp">Import/Export</a></li>
+			<li><a href="#mor" class="" id="mor">More</a></li>
+			<li><a href="#nge" class="" id="nge">Changes</a></li>
+			<li><a href="#sup" class="" id="sup">Support</a></li>
+			<li><a href="#abo" class="" id="abo">About</a></li>
 			<li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=C5GNE665F894E" class="" id="don" target="_blank">Donate</a></li>
 		</ul>
 		<!-- END NAVIGATION -->
@@ -267,7 +90,7 @@
 			<div>
 				<input type="checkbox" id="customCSS" />
 					&nbsp;<label for="customCSS" title="">Use custom CSS</label><br />
-					<textarea id="customCSSval" rows="5" cols="40" style="margin-left: 25px;"></textarea>
+					<textarea id="customCSSval" rows="30" cols="50" style="margin-left: 25px;"></textarea>
 					<br />
 					<span class="note">Don't know CSS? <a href="https://groups.google.com/forum/?hl=en#!forum/minimalist-google-calendar" target="_blank">Ask questions and see examples here</a></span>
 			</div>
@@ -357,7 +180,7 @@
 								<td><div c id="BTNtop"><div id="BTNtopSUB" style="background-color: #e3e3e3;"></div></div></td>
 							</tr>
 							<tr>
-								<td colspan="2"><input type="button" value="Reset" onClick="cButtonReset()" /></td>
+								<td colspan="2"><input id="resetButtons" type="button" value="Reset"/></td>
 							</tr>
 						</table>
 				</div>
@@ -586,7 +409,7 @@
 				<br /><br />
 				<form name="EI">
 				<textarea id="EImain" rows="5" cols="40"></textarea>
-				<input type="button" value="Export" onClick="export('EImain')" /><input type="button" value="Import" onClick="import('EImain')" />
+				<input id="Export" type="button" value="Export"/><input id="Import" type="button" value="Import"/>
 				</form>
 			</div>
 		</section>
@@ -632,21 +455,22 @@
 #e3e3e3
 </textarea>
 				</div>
-				<input type="button" value="None" onClick="javascript:export('EIC_3');import('EI_0');;" />
-				<input type="button" value="Basics" onClick="javascript:export('EIC_3');import('EI_1');;" />
-				<input type="button" value="Simple" onClick="javascript:export('EIC_3');import('EI_2');;" />
-				<input type="button" value="Crazy" onClick="javascript:export('EIC_3');import('EI_3');;" /><br /><br />
+				<input id="None" type="button" value="None"/>
+				<input id="Basics" type="button" value="Basics"/>
+				<input id="Simple" type="button" value="Simple"/>
+				<input id="Crazy" type="button" value="Crazy"/>
+                <br /><br />
 				<table>
 					<tr>
-						<td><input type="button" value="Custom 1" onClick="import('EIC_1')"/></td>
+						<td><input id="Custom1" type="button" value="Custom 1"/></td>
 						<td><textarea id="EIC_1" rows="1" cols="26"></textarea></td>
 					</tr>
 					<tr>
-						<td><input type="button" value="Custom 2" onClick="import('EIC_2')" /></td>
+						<td><input id="Custom2" ttype="button" value="Custom 2"/></td>
 						<td><textarea id="EIC_2" rows="1" cols="26"></textarea></td>
 					</tr>
 					<tr>
-						<td><input type="button" value="Custom 3" onClick="import('EIC_3')" /></td>
+						<td><input id="Custom3" ttype="button" value="Custom 3"/></td>
 						<td><textarea id="EIC_3" rows="1" cols="26"></textarea></td>
 					</tr>
 				</table>
@@ -657,7 +481,7 @@
 			<div>
 				If you are having problems and just want to start fresh, use this button. <strong>It will clear all local settings and reset them to Google Calendar's default.</strong>
 				<br /><br />
-				<input type="button" class="red" value="Reset All" onClick="javascript:localStorage.clear();import('EI_0');;" />
+				<input id="ResetAll" type="button" class="red" value="Reset All"/>
 			</div>
 		</section>
 	</div>
@@ -842,32 +666,6 @@
 		</section>
 	</div>
 </div>
-<script type="text/javascript">
-	//---- PROCESS URL HASHES ----//
-	var hash = window.location.hash.substr(1);
-	document.getElementById("refresh").setAttribute("style","");
-
-	if (hash == "update") {
-		document.getElementById("nge").setAttribute("class", "current");
-		document.getElementById("OPTnge").setAttribute("style", "display: block;");
-		document.getElementById("updated").setAttribute("style", "");
-		last = "nge";
-	} else if (hash == "imps") {
-		document.getElementById("imp").setAttribute("class", "current");
-		document.getElementById("OPTimp").setAttribute("style", "display: block;");
-		$("#announce").attr("style", "");
-		document.getElementById("refreshEI").setAttribute("style","display: block;");
-		last = "imp";
-	} else if (hash == null || hash == "") {
-		document.getElementById("gen").setAttribute("class", "current");
-		document.getElementById("OPTgen").setAttribute("style", "display: block;");
-		last = "gen";
-	} else {
-		document.getElementById(hash).setAttribute("class", "current");
-		document.getElementById("OPT" + hash).setAttribute("style", "display: block;");
-		last = hash;
-	}
-	//---- END PROCESS URL HASHES ----//
-</script>
+<script type="text/javascript" src="js/hashes.js"></script>
 </body>
 </html>

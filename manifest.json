@@ -1,31 +1,49 @@
 {
-	"name": "Minimalist for Google Calendar™",
-	"version": "0.7.0",
-	"description": "Individually hide almost 50 interface elements and add custom logos, and more...",
-	"icons": {
-         "16": "img/icons/icon16.png",
-		 "48": "img/icons/icon48.png",
-		"128": "img/icons/icon128.png" },
-	"page_action": {
-		"default_icon": "img/icons/icon19.png",
-		"default_title": "Minimalist for Google Calendar Options",
-		"default_popup": "popup.html"
-	},
-	"background_page": "background.html",
-	"content_scripts": [ {
-		"matches": [ "http://www.google.com/calendar/*", "https://www.google.com/calendar/*" ],
-		"js": [ "js/stylesheet.js" , "js/active.js", "js/favicon.js" ],
-		"run_at": "document_end",
-		"all_frames": true
-	}, {
-		"matches": [ "http://www.google.com/voice/*", "https://www.google.com/voice/*" ],
-		"js": [ "js/voice.js" ],
-		"all_frames": true
-	} ],
-	"options_page": "options.html",	
-	"permissions": [
-		"tabs",
-		"http://www.google.com/calendar/*",
-		"https://www.google.com/calendar/*"
-	]
+    "background": {
+        "scripts": ["js/background.js"]
+    },
+    "content_scripts": [{
+        "all_frames": true,
+        "js": [
+            "js/stylesheet.js",
+            "js/active.js",
+            "js/favicon.js"
+        ],
+        "matches": [
+            "http://calendar.google.com/calendar/*",
+            "https://calendar.google.com/calendar/*"
+        ],
+        "run_at": "document_end"
+    },{
+        "all_frames": true,
+        "js": [ "js/voice.js" ],
+        "matches": [
+            "http://www.google.com/voice/*",
+            "https://www.google.com/voice/*"
+        ]
+    }],
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+    "description": "Individually hide almost 50 interface elements and add custom logos, and more...",
+    "icons": {
+        "128": "img/icons/icon128.png",
+        "16": "img/icons/icon16.png",
+        "48": "img/icons/icon48.png"
+    },
+    "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDKb0+90mknDELl3ze8gPtd5ZeadvWd8vr9ByDD5XB7STg7uOgGsMm8abv16XHDlU+5AL7K+K6X+G9VPjbfAxjXBTZIIi9CXknrBb8XVPfBZYP0IT9RNfa/qeSH0mmfe8VHMQR/W2PNNRXhWhf5NIsAS4PSp3mJp+8XfA+kcFLEWwIDAQAB",
+    "manifest_version": 2,
+    "name": "Minimalist for Google Calendar™",
+    "options_page": "options.html",
+    "page_action": {
+        "default_icon": "img/icons/icon19.png",
+        "default_popup": "popup.html",
+        "default_title": "Minimalist for Google Calendar Options"
+    },
+    "permissions": [
+        "tabs",
+        "http://*.google.com/calendar/*",
+        "https://*.google.com/calendar/*"
+    ],
+    "update_url": "http://clients2.google.com/service/update2/crx",
+    "version": "0.7.7"
 }
+

@@ -5,7 +5,7 @@
 // @description      Features that require one time initialization on complete page load.
 // ==/UserScript==
 
-chrome.extension.sendRequest({elements: "o"}, function(response) {
+chrome.runtime.sendMessage({elements: "o"}, function(response) {
 
 	//---- VARIABLES ----//
 	// f_* whether one-time task is done
@@ -62,25 +62,17 @@ chrome.extension.sendRequest({elements: "o"}, function(response) {
 		if (response.o.nav && !f_navToggle) {
 			console.log("MINIMALIST GOOGLE CALENDAR: Adding the nav hook...");
 			try {
+		        var navDiv  = document.getElementById('mainbody');
 				var side = document.getElementById("sidebar");
 				var nav = document.getElementById("nav");				
 					minimalist(side, false, "hideN");
 					minimalist(nav, false, "hideN");
+					minimalist(navDiv, false, "hideM");
+ 
 				var toggleN = document.createElement("td");
 					toggleN.setAttribute("id", "navToggle");
 				if (response.o.navO) {
 					toggleN.addEventListener("mouseover", toggleNav, false);
-					side.addEventListener("click", toggleNav, false);
-					var side_children = side.querySelectorAll('*');
-					for (var i = 0; i < side_children.length; i++) {
-						side_children[i].addEventListener("click", toggleNav, false);
-					}
-					nav.addEventListener("click", toggleNav, false);
-					var nav_children = nav.querySelectorAll('*');
-					for (var i = 0; i < nav_children.length; i++) {
-						console.log(nav_children[i]);
-						nav_children[i].addEventListener("click", toggleNav, false);
-					}
 				}
 				nav.parentNode.insertBefore(toggleN, nav);
 				f_navToggle = true;
@@ -100,10 +92,10 @@ chrome.extension.sendRequest({elements: "o"}, function(response) {
 		if (response.o.header && !f_headerToggle) {
 			console.log("MINIMALIST GOOGLE CALENDAR: hiding header and adding toggle...");
 			var head;
-			if (document.getElementById("topBar")) {
-				head = document.getElementById("topBar");
+			if (document.getElementById("onegoogbar")) {
+				head = document.getElementById("onegoogbar");
 			} else {
-				head = document.getElementById("vr-proto-header");
+				head = document.getElementById("gb");
 			}
 			try {
 				minimalist(head, false, "hideH");
@@ -376,10 +368,10 @@ chrome.extension.sendRequest({elements: "o"}, function(response) {
 
 	function toggleHeader(){
 		var head;
-		if (document.getElementById("topBar")) {
-			head = document.getElementById("topBar");
+		if (document.getElementById("onegoogbar")) {
+			head = document.getElementById("onegoogbar");
 		} else {
-			head = document.getElementById("vr-proto-header");
+			head = document.getElementById("gb");
 		}
 		if (response.o.gbarH && !response.o.header) {
 			if (hiddenG) {
@@ -412,15 +404,13 @@ chrome.extension.sendRequest({elements: "o"}, function(response) {
 
 	function toggleNav() {
 		if (response.o.nav) {
-			if (hiddenN) {
-				minimalist(document.getElementById('sidebar'), true, "hideN");
-				minimalist(document.getElementById('nav'), true, "hideN");
-				hiddenN = false;
-			} else {
-				minimalist(document.getElementById('sidebar'), false, "hideN");
-				minimalist(document.getElementById('nav'), false, "hideN");
-				hiddenN = true;
-			}
+		    var navDiv  = document.getElementById('mainbody');
+            var side    = document.getElementById("sidebar");
+		    var nav     = document.getElementById("nav");				
+            minimalist(side, hiddenN, "hideN");
+            minimalist(nav, hiddenN, "hideN");
+            minimalist(navDiv, hiddenN, "hideM");
+            hiddenN = ! hiddenN;
 		}
 	}
 

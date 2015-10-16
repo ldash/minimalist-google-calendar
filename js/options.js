@@ -19,30 +19,30 @@ $(function(){
 	if(localStorage['options']){
 		var o = JSON.parse(localStorage['options']);
 		// GENERAL
-			$("#mcicon").attr('checked', o.mcicon);
-			$("#favicon").attr('checked', o.favicon);
-			$("#backC").attr('checked', o.backC);
+			$("#mcicon").prop('checked', o.mcicon);
+			$("#favicon").prop('checked', o.favicon);
+			$("#backC").prop('checked', o.backC);
 				if ((o.backCLR != null) && (o.backCLR != ""))
 					$("#backCLRsub").attr("style","background-color:" + o.backCLR + ";");
-			$("#borders").attr('checked', o.borders);
+			$("#borders").prop('checked', o.borders);
 				if ((o.borderCLR != null) && (o.borderCLR != ""))
 					$("#borderCLRsub").attr("style","background-color:" + o.borderCLR + ";");
-			$("#linkC").attr('checked', o.linkC);
+			$("#linkC").prop('checked', o.linkC);
 				if ((o.linkCLR != null) && (o.linkCLR != ""))
 					$("#linkCLRsub").attr("style","background-color:" + o.linkCLR + ";");
-			$("#todayH").attr('checked', o.todayH);
+			$("#todayH").prop('checked', o.todayH);
 				if ((o.todayCLR != null) && (o.todayCLR != ""))
 					$("#todayCLRsub").attr("style","background-color:" + o.todayCLR + ";");
-			$("#weekends").attr('checked', o.weekends);
-			$("#weekendM").attr('checked', o.weekendM);
-			$("#hours").attr('checked', o.hours);
+			$("#weekends").prop('checked', o.weekends);
+			$("#weekendM").prop('checked', o.weekendM);
+			$("#hours").prop('checked', o.hours);
 				if ((o.Hcolor != null) && (o.Hcolor != ""))
 					$("#Hcolor").attr("style","background-color:" + o.Hcolor + ";");	
 				if ((o.Hweight != null) && (o.Hweight != ""))
 					$("#Hweight").val(o.Hweight);
 				if ((o.Hsize != null) && (o.Hsize != ""))
 					$("#Hsize").val(o.Hsize);
-			$("#BTN").attr('checked', o.BTN);
+			$("#BTN").prop('checked', o.BTN);
 				if ((o.BTNcolor != null) && (o.BTNcolor != ""))
 					$("#BTNcolorSUB").attr("style","background-color:" + o.BTNcolor + ";");
 				if ((o.BTNborder != null) && (o.BTNborder != ""))
@@ -52,17 +52,17 @@ $(function(){
 				if ((o.BTNtop != null) && (o.BTNtop != ""))
 					$("#BTNtopSUB").attr("style","background-color:" + o.BTNtop + ";");
 			$("#testButton").attr("style","color: " + o.BTNcolor + ";border: 1px solid " + o.BTNborder + ";background: -webkit-gradient(linear,0% 40%,0% 70%,from(" + o.BTNbottom + "),to(" + o.BTNtop + "));");
-			$("#corners").attr('checked', o.corners);
-			$("#trans").attr('checked', o.trans);
-			$("#customCSS").attr('checked', o.customCSS);
+			$("#corners").prop('checked', o.corners);
+			$("#trans").prop('checked', o.trans);
+			$("#customCSS").prop('checked', o.customCSS);
 			if ((o.customCSSval != null) && (o.customCSSval != ""))
 				$("#customCSSval").val(localStorage["customCSSval"]);
 		// GOOGLE BAR
-			$("#gbarH").attr('checked', o.gbarH);
-			$("#gbarO").attr('checked', o.gbarO);
-			$("#gbarB").attr('checked', o.gbarB);
-			$("#gbar").attr('checked', o.gbar);
-			$("#cbar").attr('checked', o.cbar);
+			$("#gbarH").prop('checked', o.gbarH);
+			$("#gbarO").prop('checked', o.gbarO);
+			$("#gbarB").prop('checked', o.gbarB);
+			$("#gbar").prop('checked', o.gbar);
+			$("#cbar").prop('checked', o.cbar);
 				if ((o.c_n_1 != null) && (o.c_n_1 != ""))
 					$("#c_n_1").val(o.c_n_1);
 				else $("#c_n_1").val("Gmail");
@@ -114,51 +114,51 @@ $(function(){
 				if ((o.c_t_6 != null) && (o.c_t_6 != ""))
 					$("#c_t_6").val(o.c_t_6);
 				else $("#c_t_6").val("_blank")
-				$("#cbarM").attr('checked', o.cbarM);
-			$("#user").attr('checked', o.user);
-			$("#labs").attr('checked', o.labs);
-			$("#settings").attr('checked', o.settings);
-			$("#help").attr('checked', o.help);
-			$("#out").attr('checked', o.out);
+				$("#cbarM").prop('checked', o.cbarM);
+			$("#user").prop('checked', o.user);
+			$("#labs").prop('checked', o.labs);
+			$("#settings").prop('checked', o.settings);
+			$("#help").prop('checked', o.help);
+			$("#out").prop('checked', o.out);
 		// HEADER
-			$("#header").attr('checked', o.header);
-			$("#headerS").attr('checked', o.headerS);
-			$("#logoH").attr('checked', o.logoH);
-			$("#logo").attr('checked', o.logo);
+			$("#header").prop('checked', o.header);
+			$("#headerS").prop('checked', o.headerS);
+			$("#logoH").prop('checked', o.logoH);
+			$("#logo").prop('checked', o.logo);
 			if ((o.logoSRC != null) && (o.logoSRC != ""))
 				$("#logoSRC").val(o.logoSRC);
 			else $("#logoSRC").val("http://www.example.com/image.jpg");
-			$("#s_all").attr('checked', o.s_all);
-			$("#s_button").attr('checked', o.s_button);
-			$("#s_link").attr('checked', o.s_link);
+			$("#s_all").prop('checked', o.s_all);
+			$("#s_button").prop('checked', o.s_button);
+			$("#s_link").prop('checked', o.s_link);
 		// MAIN
-			$("#t_top").attr('checked', o.t_top);
-			$("#n_create").attr('checked', o.n_create);
-			$("#n_quick").attr('checked', o.n_quick);
-			$("#t_today").attr('checked', o.t_today);
-			$("#t_nav").attr('checked', o.t_nav);
-			$("#t_date").attr('checked', o.t_date);
-			$("#t_printI").attr('checked', o.t_printI);
-			$("#t_printL").attr('checked', o.t_printL);
-			$("#t_refresh").attr('checked', o.t_refresh);
-			$("#t_v1").attr('checked', o.t_v1);
-			$("#t_v2").attr('checked', o.t_v2);
-			$("#t_v3").attr('checked', o.t_v3);
-			$("#t_v4").attr('checked', o.t_v4);
-			$("#t_v5").attr('checked', o.t_v5);
+			$("#t_top").prop('checked', o.t_top);
+			$("#n_create").prop('checked', o.n_create);
+			$("#n_quick").prop('checked', o.n_quick);
+			$("#t_today").prop('checked', o.t_today);
+			$("#t_nav").prop('checked', o.t_nav);
+			$("#t_date").prop('checked', o.t_date);
+			$("#t_printI").prop('checked', o.t_printI);
+			$("#t_printL").prop('checked', o.t_printL);
+			$("#t_refresh").prop('checked', o.t_refresh);
+			$("#t_v1").prop('checked', o.t_v1);
+			$("#t_v2").prop('checked', o.t_v2);
+			$("#t_v3").prop('checked', o.t_v3);
+			$("#t_v4").prop('checked', o.t_v4);
+			$("#t_v5").prop('checked', o.t_v5);
 		// NAVIGATION
-			$("#nav").attr('checked', o.nav);
-			$("#navO").attr('checked', o.navO);
-			//$("#navWC").attr('checked', o.navWC);
+			$("#nav").prop('checked', o.nav);
+			$("#navO").prop('checked', o.navO);
+			//$("#navWC").prop('checked', o.navWC);
 			if ((o.navW != null) && (o.navW != ""))
 				$("#navW").val(o.navW);
 			else $("#navW").val("180");
-			$("#n_cal").attr('checked', o.n_cal);
-			$("#n_mine").attr('checked', o.n_mine);
-			$("#n_linksM").attr('checked', o.n_linksM);
-			$("#n_other").attr('checked', o.n_other);
-			$("#n_add").attr('checked', o.n_add);
-			$("#n_linksO").attr('checked', o.n_linksO);
+			$("#n_cal").prop('checked', o.n_cal);
+			$("#n_mine").prop('checked', o.n_mine);
+			$("#n_linksM").prop('checked', o.n_linksM);
+			$("#n_other").prop('checked', o.n_other);
+			$("#n_add").prop('checked', o.n_add);
+			$("#n_linksO").prop('checked', o.n_linksO);
 		localStorage["uncheckedUpdate"] = false;
 		$("#EIC_1").val(localStorage["EIC_1"]);
 		$("#EIC_2").val(localStorage["EIC_2"]);
@@ -170,37 +170,37 @@ $(function(){
 	function save(){
 		localStorage['options'] = JSON.stringify({
 			// GENERAL
-				"mcicon":$("#mcicon").attr('checked'),
-				"favicon":$("#favicon").attr('checked'),
-				"backC":$("#backC").attr('checked'),
+				"mcicon":$("#mcicon").prop('checked'),
+				"favicon":$("#favicon").prop('checked'),
+				"backC":$("#backC").prop('checked'),
 					"backCLR":localStorage["backCLR"],
-				"borders":$("#borders").attr('checked'),
+				"borders":$("#borders").prop('checked'),
 					"borderCLR":localStorage["borderCLR"],
-				"linkC":$("#linkC").attr('checked'),
+				"linkC":$("#linkC").prop('checked'),
 					"linkCLR":localStorage["linkCLR"],
-				"todayH":$("#todayH").attr('checked'),
+				"todayH":$("#todayH").prop('checked'),
 					"todayCLR":localStorage["todayCLR"],
-				"weekends":$("#weekends").attr('checked'),
-				"weekendM":$("#weekendM").attr('checked'),
-				"hours":$("#hours").attr('checked'),
+				"weekends":$("#weekends").prop('checked'),
+				"weekendM":$("#weekendM").prop('checked'),
+				"hours":$("#hours").prop('checked'),
 					"Hcolor":localStorage["Hcolor"],
 					"Hweight":$("#Hweight").val(),
 					"Hsize":$("#Hsize").val(),
-				"BTN":$("#BTN").attr('checked'),
+				"BTN":$("#BTN").prop('checked'),
 					"BTNcolor":localStorage["BTNcolor"],
 					"BTNborder":localStorage["BTNborder"],
 					"BTNbottom":localStorage["BTNbottom"],
 					"BTNtop":localStorage["BTNtop"],
-				"corners":$("#corners").attr('checked'),
-				"trans":$("#trans").attr('checked'),
-				"customCSS":$("#customCSS").attr('checked'),
+				"corners":$("#corners").prop('checked'),
+				"trans":$("#trans").prop('checked'),
+				"customCSS":$("#customCSS").prop('checked'),
 					"customCSSval":$("#customCSSval").val().replace(/(\r\n|\n|\r)/gm,""),
 			// GOOGLE BAR
-				"gbarH":$("#gbarH").attr('checked'),
-				"gbarO":$("#gbarO").attr('checked'),
-				"gbarB":$("#gbarB").attr('checked'),
-				"gbar":$("#gbar").attr('checked'),
-				"cbar":$("#cbar").attr('checked'),
+				"gbarH":$("#gbarH").prop('checked'),
+				"gbarO":$("#gbarO").prop('checked'),
+				"gbarB":$("#gbarB").prop('checked'),
+				"gbar":$("#gbar").prop('checked'),
+				"cbar":$("#cbar").prop('checked'),
 					"c_n_1":$("#c_n_1").val(),
 					"c_u_1":$("#c_u_1").val(),
 					"c_t_1":$("#c_t_1").val(),
@@ -219,48 +219,48 @@ $(function(){
 					"c_n_6":$("#c_n_6").val(),
 					"c_u_6":$("#c_u_6").val(),
 					"c_t_6":$("#c_t_6").val(),
-					"cbarM":$("#cbarM").attr('checked'),
-				"user":$("#user").attr('checked'),
-				"labs":$("#labs").attr('checked'),
-				"settings":$("#settings").attr('checked'),
-				"help":$("#help").attr('checked'),
-				"out":$("#out").attr('checked'),
+					"cbarM":$("#cbarM").prop('checked'),
+				"user":$("#user").prop('checked'),
+				"labs":$("#labs").prop('checked'),
+				"settings":$("#settings").prop('checked'),
+				"help":$("#help").prop('checked'),
+				"out":$("#out").prop('checked'),
 			// HEADER
-				"header":$("#header").attr('checked'),
-				"headerS":$("#headerS").attr('checked'),
-				"logoH":$("#logoH").attr('checked'),
-				"logo":$("#logo").attr('checked'),
+				"header":$("#header").prop('checked'),
+				"headerS":$("#headerS").prop('checked'),
+				"logoH":$("#logoH").prop('checked'),
+				"logo":$("#logo").prop('checked'),
 					"logoSRC":$("#logoSRC").val(),
-				"s_all":$("#s_all").attr('checked'),
-				"s_button":$("#s_button").attr('checked'),
-				"s_link":$("#s_link").attr('checked'),
+				"s_all":$("#s_all").prop('checked'),
+				"s_button":$("#s_button").prop('checked'),
+				"s_link":$("#s_link").prop('checked'),
 			// MAIN
-				"t_top":$("#t_top").attr('checked'),
-				"t_today":$("#t_today").attr('checked'),
-				"t_nav":$("#t_nav").attr('checked'),
-				"t_date":$("#t_date").attr('checked'),
-				"t_printI":$("#t_printI").attr('checked'),
-				"t_printL":$("#t_printL").attr('checked'),
-				"t_refresh":$("#t_refresh").attr('checked'),
-				"t_v1":$("#t_v1").attr('checked'),
-				"t_v2":$("#t_v2").attr('checked'),
-				"t_v3":$("#t_v3").attr('checked'),
-				"t_v4":$("#t_v4").attr('checked'),
-				"t_v5":$("#t_v5").attr('checked'),
+				"t_top":$("#t_top").prop('checked'),
+				"t_today":$("#t_today").prop('checked'),
+				"t_nav":$("#t_nav").prop('checked'),
+				"t_date":$("#t_date").prop('checked'),
+				"t_printI":$("#t_printI").prop('checked'),
+				"t_printL":$("#t_printL").prop('checked'),
+				"t_refresh":$("#t_refresh").prop('checked'),
+				"t_v1":$("#t_v1").prop('checked'),
+				"t_v2":$("#t_v2").prop('checked'),
+				"t_v3":$("#t_v3").prop('checked'),
+				"t_v4":$("#t_v4").prop('checked'),
+				"t_v5":$("#t_v5").prop('checked'),
 			// NAVIGATION
-				"nav":$("#nav").attr('checked'),
-				"navO":$("#navO").attr('checked'),
-				//"navWC":$("#navWC").attr('checked'),
+				"nav":$("#nav").prop('checked'),
+				"navO":$("#navO").prop('checked'),
+				//"navWC":$("#navWC").prop('checked'),
 				"navW":$("#navW").val(),
-				"top":$("#top").attr('checked'),
-				"n_create":$("#n_create").attr('checked'),
-				"n_quick":$("#n_quick").attr('checked'),
-				"n_cal":$("#n_cal").attr('checked'),
-				"n_mine":$("#n_mine").attr('checked'),
-				"n_linksM":$("#n_linksM").attr('checked'),
-				"n_other":$("#n_other").attr('checked'),
-				"n_add":$("#n_add").attr('checked'),
-				"n_linksO":$("#n_linksO").attr('checked'),
+				"top":$("#top").prop('checked'),
+				"n_create":$("#n_create").prop('checked'),
+				"n_quick":$("#n_quick").prop('checked'),
+				"n_cal":$("#n_cal").prop('checked'),
+				"n_mine":$("#n_mine").prop('checked'),
+				"n_linksM":$("#n_linksM").prop('checked'),
+				"n_other":$("#n_other").prop('checked'),
+				"n_add":$("#n_add").prop('checked'),
+				"n_linksO":$("#n_linksO").prop('checked'),
 		});
 		localStorage["customCSSval"] = $("#customCSSval").val();
 		localStorage["EIC_1"] = $("#EIC_1").val();
@@ -351,18 +351,6 @@ function updateButton() {
 	$("#testButton").attr("style","border: 1px solid #" + localStorage["BTNborder"] + ";background: -webkit-gradient(linear,0% 40%,0% 70%,from(#" + localStorage["BTNbottom"] + "),to(#" + localStorage["BTNtop"] + "));");
 }
 
-// NAVIGATION HANDLER
-var last = "gen";
-function navigate(link) {
-	$("#OPT" + last).attr("style", "");
-	$("#OPT" + link).attr("style", "display: block;");
-	//document.getElementById("OPT" + link).scrollTop = 0;
-	$("#" + last).attr("class", "");
-	$("#" + link).attr("class", "current");
-	//document.getElementById("OPTside").scrollTop = 0;
-	last = link;
-}
-
 // RESET CUSTOM BUTTONS COLORS
 function cButtonReset() {
 	localStorage["BTNcolor"] = "#000000";
@@ -373,7 +361,7 @@ function cButtonReset() {
 }
 
 //---- EXPORT/IMPORT ----//
-function export(EIid) {
+function eport(EIid) {
 	var prefOut = new Array();
 		prefOut[0] = localStorage["options"];
 		prefOut[1] = localStorage["borderCLR"];
@@ -394,7 +382,7 @@ function export(EIid) {
 	if (EIid == "EIC_3") localStorage["EIC_3"] = prefsOut;	// backup existing to Custom 3
 }
 
-function import(EIid) {
+function iport(EIid) {
 	var prefsIn = document.getElementById(EIid).value;
 	var prefIn = prefsIn.split("\n");
 		localStorage["options"] = prefIn[0];
@@ -425,3 +413,4 @@ function easterEgg() {
 		$('#easterEgg_off').attr('style','display:block;');
 	}
 }
+

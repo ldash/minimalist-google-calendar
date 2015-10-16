@@ -1,5 +1,6 @@
 <html>
 <head>
+    <script type="text/javascript" src="js/popup.js"></script>
 	<style type="text/css">
 		body {
 			background: url("../img/bg.png") repeat-x #222;
@@ -39,57 +40,12 @@
 			background: -webkit-gradient(linear, left top, left bottom, from(rgb(150,150,150)), to(rgb(200,200,200)));
 		}
 	</style>
-	<script type="text/javascript">
-		WebFontConfig = {
-			google: { families: [ 'Raleway:100' ] }
-		};
-		(function() {
-			var wf = document.createElement('script');
-			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-				'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-			wf.type = 'text/javascript';
-			wf.async = 'true';
-			var s = document.getElementsByTagName('script')[0];
-			s.parentNode.insertBefore(wf, s);
-		})();
-	</script>
-	<script type="text/javascript">
-		function toggle() {
-			chrome.extension.sendRequest({action: 'toggle'}, function(response) {});
-			chrome.extension.sendRequest({action: 'reload'}, function(response) {});
-		}
-		function options() {
-			if (localStorage["uncheckedUpdate"] == "true") {
-				chrome.tabs.create({url:chrome.extension.getURL("options.html#update")});
-				chrome.pageAction.setIcon({tabId: tab.id, path:"img/icons/icon19.png"});
-				chrome.pageAction.setTitle({tabId: tab.id, title:"Minimalist for Google Calendar Options"});
-				localStorage["uncheckedUpdate"] = false;
-			} else {
-				chrome.tabs.create({url:chrome.extension.getURL("options.html")});
-			}
-		}
-		function reload() {
-			chrome.extension.sendRequest({action: 'reload'}, function(response) {});
-		}
-	</script>
-	<script type="text/javascript">
-
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-21124660-1']);
-	  _gaq.push(['_trackPageview']);
-
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-
-	</script>
+    <script type="text/javascript" src="js/font.js"></script>
 </head>
 <body>
 	<h1>Minimalist<br /><span>Google Calendar</span></h1>
-	<input type="button" onclick="options()" value="Options" /><br />
-	<input type="button" onclick="toggle()" value="Toggle on/off" /><br />
-	<input type="button" onclick="reload()" value="PANIC!" />
+	<input id='options' type="button" value="Options" /><br />
+	<input id='toggle' type="button" value="Toggle on/off" /><br />
+	<input id='reload' type="button" value="PANIC!" />
 </body>
 </html>

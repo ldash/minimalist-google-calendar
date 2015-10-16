@@ -18,13 +18,13 @@
   If you look as the permissions required by similar extensions in the Web Store, you will see that they are exactly the same
   so before you make assumptions based on two short and broad statements, please read the following:
 
- ## "tabs"
+** "tabs" **
   * This permissions results in the "This extensions can access your browsing history" warning.
   * I *NEVER* access your browsing history.
   * I need this permission to open tabs. I use this to open the options page on major updates.
   * This permission is also used to refresh the Google Calendar tab when you save your settings.
- ## "http://*google.com/calendar/*", "https://*google.com/calendar/*"
-  * This permission results in the "This extension can access your data on google.com/calendar" warning.
+** "http://\*google.com/calendar/\*", "https://\*google.com/calendar/\*" **
+  * This permission results in the "This extension can access your data on calendar.google.com/calendar" warning.
   * I *NEVER* access, read, store, or transmit your personal data.
   * I need this permission to run user scripts behind specific pages in the browser.
   * These scripts inject Javascript and CSS into Gmail to enhance functionality and hide elements
@@ -37,7 +37,6 @@
   The Options page is easy to use and interactive features:
   * Screenshots when you mouseover options so you know what you're changing
   * Organized tabbed navigation
-  * See it in action here: [http://www.anselsantosa.com/sites/MinimalistGoogleCalendar/options.html]
 
   The following elements can be modified individually:
  ## GENERAL
@@ -90,86 +89,83 @@
   * Hide "Add a friend's calendar"
   * Hide "Add | Settings" links
  ## MORE?
-  * Leave feature suggestions in the Issue Tracker: [http://code.google.com/p/minimalist-google-calendar/issues]
-
-
-## HOW DO I WORK IT?
-
-  All the instructions you need are on the support page:
-  [http://code.google.com/p/minimalist-google-calendar/wiki/Support]
+  * Leave feature suggestions in the Issue Tracker:
+  [https://github.com/ldash/Minimalist-Google-Calendar/issues]
 
 
 ## ISSUES TRACKING
 
   I test as thoroughly as I can before each release, but bugs are bound to get through.
   Read, track, and submit bugs in the Issue Tracker:
-  [http://code.google.com/p/minimalist-google-calendar/issues]
+  [https://github.com/ldash/Minimalist-Google-Calendar/issues]
 
 
 ## QUESTION?
 
-  * Ping me on Twitter: @anstosa
-  * Email me: ansel@anselsantosa.com
+  * Email me: ldashevskiy@gmail.com
 
 
 ## COMING SOON
 
   Want to recommend a feature? Submit it in the Issues Tracker:
-  [http://code.google.com/p/minimalist-google-calendar/issues/list]
+  [https://github.com/ldash/Minimalist-Google-Calendar/issues]
 
 
 ## CHANGELOG
 
+ ### 0.7.7 [October 15, 2015]
+* The development standards (specifically the security policy of Chrome's extensions) have progressed a great deal since last update, so an entire overhaul of the extension had to be performed for it to simply load with no errors, the extension got basically modernized, all of the old API calls were upgraded and the fix was added to address the left panel not hiding properly.
+* The domains to activate the extension on were updated to reflect the change by Google.
  
- ## 0.7.00 [30]
-  * Added: Full support for new UI! (theme settings work but most are no necessary)
-  * Changed: Buttons no longer skinned by default
- ## 0.6.14 [18 MAY]
-  * Fixed: Unreliability in 13.*
- ## 0.6.13 [17 MAY]
-  * Fixed: Typo in background.html
- ## 0.6.12 [17 MAY]
-  * Fixed: Typo on options page
-  * Fixed: Workaround for Chromium 82784: http://goo.gl/XZMSr. No icon for affected builds
- ## 0.6.11 [12 APR]
-  * Fixed: Custom settings fields not loading from memory
-  * Fixed: Export loop not catching background or link colors
-  * Fixed: Custom Google Links not applying to new Google Bar
- ## 0.6.10 [27 MAR]
-  * Fixed: color-coded links in agenda view over-riden by custom link color
-  * Fixed: Agenda view header not affected by custom accent color
- ## 0.6.9 [21 MAR]
-  * Fixed: typo
- ## 0.6.8 [20 MAR]
-  * Changed: URL bar icons are smaller and lighter to not be intrusive
- ## 0.6.7 [18 MAR]
-  * Changed: Logos to comply with Google's branding guidelines
- ## 0.6.6 [17 MAR]
-  * Fixed: Hide My calendar, other calendars and add calendars box not working
- ## 0.6.5 [16 MAR]
-  * Added: Minimalist for Google Reader info
-  * Fixed: input and textarea borders now match border colors
-  * Fixed: bars remain when hiding Google user bar elements
-  * Fixed: Google Bar features incompatible with new Google Bar
- ## 0.6.4 [20 Feb]
-  * Added: Donate tab in options
-  * Fixed: Install failure on Chrome for Fedora
-  * Fixed: New Google Bar not compatible. [not rolling out yet, preemptive fix]
-  * Fixed: Dim weekend overrides today highlighting in month view
- ## 0.6.3 [10 Feb]
-  * Fixed: Header contents hidden when Google Bar hidden
- ## 0.6.2 [10 Feb]
-  * Added: Week starts on Monday option for dim weekends
-  * Fixed: [partially] unclickable top nav with header hidden [for real this time]
- ## 0.6.1 [10 Feb]
-  * Added: Show current date in favicon
-  * Added: Custom background color
-  * Added: Custom link color
-  * Added: Dim weekends
-  * Fixed: 2nd custom link always disabled "Calendar"
-  * Fixed: unclickable top nav with header hidden
- ## 0.6.0
-  * First!
+### 0.7.00 [30]
+ * Added: Full support for new UI! (theme settings work but most are no necessary)
+ * Changed: Buttons no longer skinned by default
+### 0.6.14 [18 MAY]
+ * Fixed: Unreliability in 13.*
+### 0.6.13 [17 MAY]
+ * Fixed: Typo in background.html
+### 0.6.12 [17 MAY]
+ * Fixed: Typo on options page
+ * Fixed: Workaround for Chromium 82784: http://goo.gl/XZMSr. No icon for affected builds
+### 0.6.11 [12 APR]
+ * Fixed: Custom settings fields not loading from memory
+ * Fixed: Export loop not catching background or link colors
+ * Fixed: Custom Google Links not applying to new Google Bar
+### 0.6.10 [27 MAR]
+ * Fixed: color-coded links in agenda view over-riden by custom link color
+ * Fixed: Agenda view header not affected by custom accent color
+### 0.6.9 [21 MAR]
+ * Fixed: typo
+### 0.6.8 [20 MAR]
+ * Changed: URL bar icons are smaller and lighter to not be intrusive
+### 0.6.7 [18 MAR]
+ * Changed: Logos to comply with Google's branding guidelines
+### 0.6.6 [17 MAR]
+ * Fixed: Hide My calendar, other calendars and add calendars box not working
+### 0.6.5 [16 MAR]
+ * Added: Minimalist for Google Reader info
+ * Fixed: input and textarea borders now match border colors
+ * Fixed: bars remain when hiding Google user bar elements
+ * Fixed: Google Bar features incompatible with new Google Bar
+### 0.6.4 [20 Feb]
+ * Added: Donate tab in options
+ * Fixed: Install failure on Chrome for Fedora
+ * Fixed: New Google Bar not compatible. [not rolling out yet, preemptive fix]
+ * Fixed: Dim weekend overrides today highlighting in month view
+### 0.6.3 [10 Feb]
+ * Fixed: Header contents hidden when Google Bar hidden
+### 0.6.2 [10 Feb]
+ * Added: Week starts on Monday option for dim weekends
+ * Fixed: [partially] unclickable top nav with header hidden [for real this time]
+### 0.6.1 [10 Feb]
+ * Added: Show current date in favicon
+ * Added: Custom background color
+ * Added: Custom link color
+ * Added: Dim weekends
+ * Fixed: 2nd custom link always disabled "Calendar"
+ * Fixed: unclickable top nav with header hidden
+### 0.6.0
+ * First!
 
 
 ## LEGAL

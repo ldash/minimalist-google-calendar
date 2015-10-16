@@ -5,7 +5,7 @@
 // @description      Stylesheet construction and injection
 // ==/UserScript==
 
-chrome.extension.sendRequest({elements: 'o'}, function(response) {
+chrome.runtime.sendMessage({elements: "o"}, function(response) {
 	var css = "";
 
 	css += "html::-webkit-scrollbar { width: 0px; }\n";
@@ -13,6 +13,12 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 	css += "input:focus, textarea:focus { outline: 0; margin: 0px !important; border: 2px solid #BCF !important; }\n";
 	css += "#nav:not([min ~= 'hideN']), #sidebar:not([min ~= 'hideN']) { width: " + response.o.navW + "px; }\n";
 	css += "#gbar, #guser { height: 20px; padding-bottom: 0 !important; }\n";	
+	if (response.nav) {
+		css += "#mainbody { margin-left: " + ( parseInt(response.o.navW) + 79 - 30 ) + "px !important; }\n";
+	} else {
+		css += "#mainbody { margin-left: " + ( parseInt(response.o.navW) + 69 - 30 ) + "px !important; }\n";	
+	} 
+	
 	
 	// GENERAL
 		if (response.o.BTN) {
@@ -40,14 +46,17 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 			css += "[class *= 'link'], [id *= 'link'], [class *= 'lk'], [id *= 'lk'], .st-more, .mv-dayname, .dp-sb-cur, .mg-print, .mg-refresh, .ui-dtsr-unselected, .qnb-quickadd, a:not(.lv-event-title), a[class *= 'gb'] { color: " + response.o.linkCLR + " !important; }\n";
 		if (response.o.weekends){
 			if (response.o.weekendM)
-				css += ".tg-weekend, .st-bg-table td:nth-child(6):not(.st-bg-today), .st-grid tr:first-child td:nth-child(6):not(.st-dtitle-today), .st-bg-table td:last-child:not(.st-bg-today):not(.st-dtitle-today), .st-grid tr:first-child td:last-child { background-color: rgba(0,0,0,.05) !important; }\n";
-			else css += ".tg-weekend, .st-bg-table td:first-child:not(.st-bg-today), .st-grid tr:first-child td:first-child:not(.st-dtitle-today), .st-bg-table td:last-child:not(.st-bg-today):not(.st-dtitle-today), .st-grid tr:first-child td:last-child { background-color: rgba(0,0,0,.05) !important; }\n";
+				css += ".tg-weekend, #weekViewAllDayBgwk td:nth-child(6)-child, #weekViewAllDayBgwk td:last-child, .st-bg:nth-child(6), .st-bg:last-child { background-color: rgba(0,0,0,.03) !important; }\n";
+			else css += ".tg-weekend, #weekViewAllDayBgwk td:first-child, #weekViewAllDayBgwk td:last-child, .st-bg:first-child, .st-bg:last-child { background-color: rgba(0,0,0,.03) !important; }\n";
 			//css += ".st-dtitle:not(.st-dtitle-down) { border-top: 0 !important; }\n";
 		}	
 		if (response.o.todayH) {
-			css += ".st-dtitle-today, [class *= 'st-bg-td'], .wk-today { background-color: " + response.o.todayCLR + " !important; border-color: " + response.o.todayCLR + " !important; }\n"
-			css += ".dp-today-selected, .st-bg-today, [class *= 'st-bg-td'], .tg-today { background-color: " + lighten(lighten(lighten(lighten(lighten(response.o.todayCLR))))) + " !important; border-color: " + response.o.todayCLR + " !important; }\n"
-			css += ".dp-today, .dp-today-selected, .st-dtitle-down, .st-bg-today, .st-dtitle-today, .tg-col-today { border-color: " + response.o.todayCLR + " !important; }\n"
+			css += " { background-color: " + response.o.todayCLR + " !important; border-color: " + response.o.todayCLR + " !important; }\n";
+			css += ".tg-today, .st-bg-today, .st-bg-td-first, .st-bg-td-last, .st-dtitle-today { background-color: " + lighten(lighten(lighten(lighten(lighten(response.o.todayCLR))))) + " !important; border-color: " + response.o.todayCLR + " !important; }\n";
+			css += ".st-dtitle-down { border-top-color: " + response.o.todayCLR + " !important; }\n";
+			css += ".tg-col-today, .st-bg.st-bg-next, .st-bg-today + .st-bg-next { border-left-color: " + response.o.todayCLR + " !important; }\n";
+			//css += ".wk-today { border-bottom-color: " + response.o.todayCLR + " !important; }\n";
+			css += ".wk-today { color: " + response.o.todayCLR + " !important; }\n";
 		}
 		if (response.o.hours)
 			css += ".tg-time-pri { font-size: " + response.o.Hsize + "; font-weight: " + response.o.Hweight + "; color: " + response.o.Hcolor + "; }\n"
@@ -74,7 +83,7 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 			css += ".gbh, .gbd, #gbx3, #gbx4 { background-image: none !important; background-color: rgba(255,255,255,0) !important; border: 0 !important; }\n";
 	// HEADER
 		if (response.o.header || response.o.gbarH) {
-			css += "[min ~= 'hideH'], [min ~= 'hideH'] *, [min ~= 'hideG'], [min ~= 'hideG'] * { opacity: 0; margin: 0 !important; padding: 0 !important; height: 0 !important; }\n";
+			css += "[min ~= 'hideH'], [min ~= 'hideH'] *, [min ~= 'hideG'], [min ~= 'hideG'] * { opacity: 0; margin: 0 !important; padding: 0 !important; height: 0 !important; display: none; }\n";
 			//css += "[min ~= 'hideH'] *, [min ~= 'hideG'] * { margin: -16px 0 16px 0 !important; }\n";
 		}
 		if (response.o.header) {
@@ -105,8 +114,8 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 			css += "#topCtrls form span, #srreg form span { display: none !important; }\n";
 	// MAIN
 		if (response.o.t_top) {
-			css += "#fastui-topnav-container { display: none !important; }\n";
-			css += "#mothertable { border-top: 5px solid #BCF; }";
+			css += "#fastui-topnav-container, #vr-nav { display: none !important; }\n";
+			css += "div:not(#vr-nav) + #mothertable { border-top: 5px solid #BCF; }";
 		}
 		if (response.o.n_create) {
 			css += "#sidebar > div > div:first-child { display: none !important; }\n";
@@ -140,10 +149,10 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 			css += "#topRightNavigation > .button-strip > .goog-imageless-button:nth-child(5) { display: none !important; }\n";		
 	// NAVIGATION
 		if (response.o.nav) {
-			css += "#navToggle { display: inline-block; position: absolute; top: 0; left: 0; min-height: 400px; z-index: 999; background-color: rgba(0,0,0,0); width: 10px !important; cursor: pointer !important; }\n";
-			css += "#navToggle:hover { background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,.15)), to(rgba(0,0,0,0))); }\n";
+			css += "#navToggle { display: inline-block; position: absolute; top: 0; left: 0; height: 100%; z-index: 999; background-color: rgba(0,0,0,0); width: 10px !important; cursor: pointer !important; }\n";
+			css += "#navToggle:hover { background: rgba(0,0,0,.15); }\n";
 			css += "[min ~= 'hideN'] { width: 0px !important; opacity: 0 !important; overflow: hidden !important; }\n";
-			css += "[min ~= 'hideN'] + div #mainbody { margin-left: 10px !important; }\n";
+			css += "#mainbody[min ~= 'hideM'] { margin-left: 10px !important; }\n";
 			css += "#sidebar:not([min ~= 'hideN']) { width: " + (parseInt(response.o.navW) + 10) + "px !important; }\n";
 			css += "#sidebar, #sidebar[min ~= 'hideN'] + #mainnav { border-left: 10px solid #fff; }\n";
 			//css += "#sidebar, #nav { width: " + response.o.navW + "px; opacity: 1; }\n";

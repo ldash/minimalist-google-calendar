@@ -5,7 +5,7 @@
 // @description		The current date in favicon script
 // ==/UserScript==
 
-chrome.extension.sendRequest({elements: "o"}, function(response) {
+chrome.runtime.sendMessage({elements: "o"}, function(response) {
 	if (response.o.favicon) {	
 		function updateFavicon() {
 			var canvas = document.createElement('canvas'),

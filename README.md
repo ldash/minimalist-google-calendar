@@ -23,6 +23,7 @@
   * I *NEVER* access your browsing history.
   * I need this permission to open tabs. I use this to open the options page on major updates.
   * This permission is also used to refresh the Google Calendar tab when you save your settings.
+
 **"http://\*google.com/calendar/\*", "https://\*google.com/calendar/\*"**
   * This permission results in the "This extension can access your data on ..." warning.
   * I *NEVER* access, read, store, or transmit your personal data.
@@ -40,15 +41,17 @@
 
 
 
-  The following elements can be modified individually:
-### GENERAL
+
+The following elements can be modified individually:
+
+#### GENERAL
   * Hide Minimalist for Google Calendar options icon
   * Show date in favicon
   * Show transition animations
   * Rounded corners on input fields and textareas
   * Custom CSS input
 
-### THEME
+#### THEME
   * Customize background color
   * Customize border color
   * Customize link color
@@ -56,7 +59,7 @@
   * Customize today highlight color
   * Customize button colors
 
-### GOOGLE BAR
+#### GOOGLE BAR
   * Hide Google bar [click to toggle when hidden]
   * Make Google bar invisible until hover
   * Hide background & border
@@ -68,7 +71,7 @@
   * Hide Help link
   * Hide Sign out link
 
-### HEADER
+#### HEADER
   * Hide header [click to toggle when hidden]
   * Hide logo
   * Use custom logo
@@ -76,7 +79,7 @@
   * Hide search button
   * Hide search options
 
-### MAIN
+#### MAIN
   * Hide top toolbar
   * Hide "Today" button
   * Hide navigation arrows
@@ -85,7 +88,7 @@
   * Hide Refresh link
   * Hide view buttons
 
-### NAVIGATION
+#### NAVIGATION
   * Hide navigation
   * Custom nav width
   * Hide Create event button

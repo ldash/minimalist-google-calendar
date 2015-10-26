@@ -12,9 +12,19 @@
   Look around the options page to see what it does first hand. Link below.
 
 
+## HOW TO INSTALL
+#### The assumption is that you have the extension’s folder checked out / downloaded to your local system's hard drive
+  * In Chrome, navigate to chrome://extensions OR right click on any extension icon (to the right of the address bar) and then click "Manage" or click the main menu -> "More tools" -> "Extensions"
+  * If there is no check box to the left of "Developer mode" on the top right, check it
+  * Click "Load unpacked extension..."
+  * Navigate into the parent folder of the extension's folder, select this extension's folder by clicking on it  and click OK
+  * Assuming there are no errors, the extension should load into your browser, otherwise you will see the error message
+  * You can delete the downloaded folder (the extension was copied) 
+
+
 ## PERMISSIONS
 
-  Learn more about Chrome Extension permissions here: http://www.google.com/support/chrome/bin/answer.py?hl=en&answer=186213
+  Learn more about Chrome Extension permissions [here](http://www.google.com/support/chrome/bin/answer.py?hl=en&answer=186213):
   If you look as the permissions required by similar extensions in the Web Store, you will see that they are exactly the same
   so before you make assumptions based on two short and broad statements, please read the following:
 
@@ -135,7 +145,7 @@ The following elements can be modified individually:
 
 #### 0.6.12 [17 MAY]
  * Fixed: Typo on options page
- * Fixed: Workaround for Chromium 82784: http://goo.gl/XZMSr. No icon for affected builds
+ * Fixed: Workaround for [Chromium issue 82784](http://goo.gl/XZMSr). No icon for affected builds
 
 #### 0.6.11 [12 APR]
  * Fixed: Custom settings fields not loading from memory

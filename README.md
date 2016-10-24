@@ -132,6 +132,7 @@ The following elements can be modified individually:
 #### 0.7.7 [October 15, 2015]
 * The development standards (specifically the security policy of Chrome's extensions) have progressed a great deal since last update, so an entire overhaul of the extension had to be performed for it to simply load with no errors, the extension got basically modernized, all of the old API calls were upgraded and the fix was added to address the left panel not hiding properly.
 * The domains to activate the extension on were updated to reflect the change by Google.
+* The project was taken over by a new maintainer.
  
 #### 0.7.00 [30]
  * Added: Full support for new UI! (theme settings work but most are no necessary)
@@ -201,6 +202,6 @@ The following elements can be modified individually:
 
 ## LEGAL
 
-  I am not a Google Employee or officially affiliated with Google in any way. This extension is not endorsed by Google.
+  I am not a Google employee or officially affiliated with Google in any way. This extension is not endorsed by Google.
   Google, Google Calendar, and the Google Calendar logo are trademarks of Google Inc.
-  Use of these trademarks is subject to Google Permissions.
+  Use of these trademarks is subject to Google permissions.

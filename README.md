@@ -17,7 +17,7 @@
   * In Chrome, navigate to chrome://extensions OR right click on any extension icon (to the right of the address bar) and then click "Manage" OR click the main menu -> "More tools" -> "Extensions"
   * If there is no check box to the left of "Developer mode" on the top right, check it
   * Click "Load unpacked extension..."
-  * Navigate into the parent folder of the extension's folder, select this extension's folder by clicking on it  and click OK
+  * Navigate into the parent folder of the extension's folder, select this extension's folder by clicking on it and click OK
   * Assuming there are no errors, the extension should load into your browser, otherwise you will see the error message
   * You can delete the downloaded folder (the extension was copied) 
 
